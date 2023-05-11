@@ -1,0 +1,14 @@
+body {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../images/pattern-bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@include media('tablet') {
+  body {
+    background-image: url("../images/pattern-bg-desktop.png");
+    background-size: cover;
+  }
+}

@@ -1,0 +1,33 @@
+.nav, nav {
+  text-align: center;
+  // border: 2px solid black;
+  margin: 25px auto;
+
+  .title {
+    color: white;
+    font-weight: map-get($font-weights, 'bold');
+  }
+}
+
+
+@include media('tablet') {
+  .nav, nav {
+    margin: 30px auto;
+    // border: 2px solid red;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@include media('pc') {
+  .nav, nav {
+    margin: 30px auto;
+    // border: 2px solid red;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}
