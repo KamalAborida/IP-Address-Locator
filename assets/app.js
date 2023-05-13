@@ -4,7 +4,7 @@ const searchDiv = document.getElementById("searchDiv")
 let map
 
 function getIPLocation(ipAddress) {
-  sendHTTPRequest(`http://ip-api.com/json/${ipAddress}`)
+  sendHTTPRequest(`https://ip-api.com/json/${ipAddress}`)
   .then(data => {
     // console.log(data);
     document.getElementById("ipAddress").textContent = data.query
