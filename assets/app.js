@@ -4,12 +4,12 @@ const searchDiv = document.getElementById("searchDiv")
 let map
 
 function getIPLocation(ipAddress) {
-  sendHTTPRequest(`https://ip-api.com/json/${ipAddress}`)
+  sendHTTPRequest(`https://api.ipgeolocation.io/ipgeo?apiKey=aa02cbf94d1744efb22dca15b4d53747&ip=${ipAddress}`)
   .then(data => {
     // console.log(data);
-    document.getElementById("ipAddress").textContent = data.query
-    document.getElementById("location").textContent = data.country
-    document.getElementById("timezone").textContent = data.timezone
+    document.getElementById("ipAddress").textContent = data.ip
+    document.getElementById("location").textContent = data.city
+    document.getElementById("timezone").textContent = data["time_zone"].name
     document.getElementById("isp").textContent = data.isp
     if (!map) {
       intializeMap(data)
@@ -63,21 +63,21 @@ function sendHTTPRequest(url, data) {
 }
 
 function intializeMap(data) {
-  map = L.map('map').setView([data.lat, data.lon], 15);
+  map = L.map('map').setView([data.latitude, data.longitude], 15);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  let marker = L.marker([data.lat, data.lon]).addTo(map);
+  let marker = L.marker([data.latitude, data.longitude]).addTo(map);
 }
 
 function changeLocation(data) {
-  map.setView([data.lat, data.lon], 15);
+  map.setView([data.latitude, data.longitude], 15);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  let marker = L.marker([data.lat, data.lon]).addTo(map);
+  let marker = L.marker([data.latitude, data.longitude]).addTo(map);
 }
 
 

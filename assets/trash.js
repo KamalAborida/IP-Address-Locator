@@ -33,5 +33,27 @@
 // }
 
 
+// function getIPLocation(ipAddress) {
+//   sendHTTPRequest(`http://ip-api.com/json/${ipAddress}`)
+//   .then(data => {
+//     // console.log(data);
+//     document.getElementById("ipAddress").textContent = data.query
+//     document.getElementById("location").textContent = data.country
+//     document.getElementById("timezone").textContent = data.timezone
+//     document.getElementById("isp").textContent = data.isp
+//     if (!map) {
+//       intializeMap(data)
+//     }
+//     else {
+//       changeLocation(data)
+//     }
+//   })
+//   .catch(err => {
+//     throw new Error(err)
+//   })
+// }
+
 // 66.249.75.193
 // 41.45.46.51
+// aa02cbf94d1744efb22dca15b4d53747
+// https://api.ipgeolocation.io/ipgeo?apiKey=API_KEY&ip=1.1.1.1
